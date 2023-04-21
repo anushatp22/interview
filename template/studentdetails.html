@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+    <table class="table table-striped table-bordered table-hover">
+    <thead class="text-danger text-center">
+        <tr>
+            <th>STUDENT NAME</th>
+            <th></th>
+            <th>DATE OF BIRTH</th>
+            <th></th>
+            <th>PHYSICS</th>
+            <th></th>
+            <th>CHEMISTRY</th>
+            <th></th>
+            <th>MATHS</th>
+            <th></th>
+            <th>COMPUTER SCIENCE</th>
+            <th></th>
+            <th>PERCENTAGE OF MARKS</th>
+        </tr>
+    </thead>
+        {% for s in studentdetails %} 
+        <tr>
+            <td>{{s.student_name}}</td>
+            <td></td>
+            <td>{{s.date_of_birth}}</td>
+            <td></td>
+            <td>{{s.mark_of_physics}}</td>
+            <td></td>
+            <td>{{s.mark_of_chemistry}}</td>
+            <td></td>
+            <td>{{s.mark_of_maths}}</td>
+            <td></td>
+            <td>{{s.mark_of_computerscience}}</td>
+            <td></td>
+            <td>{{s.percentage}}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/bootstrap.js"></script>
+</head>
+    <body>
+        <form method="post" action="{% url 'studentformaction' %}">
+            {% csrf_token %}
+            <div class = 'container border border-danger-subtle mt-5'>
+                <div class = 'row'>
+                    <h3 class = 'text-danger text-center'>ADD DETAILS</h3>
+                    <table width = 100%>
+            <tr>
+                    <td>Name of Student</td>
+                    <td><input type = "text" class='form-control' name='studentname'></td>
+                </tr>
+                <tr>
+			        <td>Date of Birth</td>
+			        <td><input type = "date" name='dob' class='form-control'></td>
+			    </tr>
+                    <td>Marks of Physics</td>
+                    <td><input type = "text" name='physics' class='form-control'></td>
+                </tr>
+                <tr>
+                    <td>Marks of Chemistry</td>
+                    <td><input type = "text" name='chemistry' class='form-control'></td>
+                </tr>
+                <tr>
+                    <td>Marks of Maths</td>
+                    <td><input type = "text" name='maths' class='form-control'></td>
+                </tr>               
+                <tr>
+                    <td>Marks of Computer Science</td>
+                    <td><input type = "text" name='cs' class='form-control'></td>
+                </tr>        
+            </div>
+                <tr>
+                    <td></td>
+                    <td><input type='submit' value='SUBMIT' class="btn btn-danger mt-2"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    </body>
+    {% if messages %}
+    {% for msg in messages %}
+        <script>
+            alert('{{msg}}')
+        </script>
+    {% endfor %}
+{% endif%}
+</html>
